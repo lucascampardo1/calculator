@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Executar Calculadora",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/calculadora",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "Compilar Calculadora C",
+            "setupCommands": [
+                {
+                    "description": "Ativar formatação no GDB",
+                    "text": "-enable-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

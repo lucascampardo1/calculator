@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <math.h>
 
 float somar();
 float subtrair();
 float multiplicar();
 float dividir();
+float potencia();
+float raizQuadrada();
 
 int main() {
     int opcao = -1;
@@ -13,7 +16,9 @@ int main() {
         printf("1. Adicao\n");
         printf("2. Subtracao\n");
         printf("3. Multiplicacao\n");
-        printf("4. Divisao\n");
+        printf("4. Divisao\n"); 
+        printf("5. Potencia\n");
+        printf("6. Raiz Quadrada\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
@@ -36,6 +41,16 @@ int main() {
             }
             case 4: {
                 float resultado = dividir();
+                printf("Resultado: %.2f\n", resultado);
+                break;
+            }
+            case 5: {
+                float resultado = potencia();
+                printf("Resultado: %.2f\n", resultado);
+                break;
+            }
+            case 6: {
+                float resultado = raizQuadrada();
                 printf("Resultado: %.2f\n", resultado);
                 break;
             }
@@ -94,4 +109,27 @@ float dividir() {
     }
 
     return a / b;
+}
+
+float potencia() {
+    float base, expoente;
+    printf("Digite a base: ");
+    scanf("%f", &base);
+    printf("Digite o expoente: ");
+    scanf("%f", &expoente);
+
+    return pow(base, expoente);
+}
+
+float raizQuadrada() {
+    float num;
+    printf("Digite um número: ");
+    scanf("%f", &num);
+
+    if (num < 0) {
+        printf("Erro: Não existe raiz real de número negativo.\n");
+        return 0.0;
+    }
+
+    return sqrt(num);
 }

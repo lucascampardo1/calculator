@@ -1,5 +1,24 @@
 {
+    "version": "2.0.0",
     "tasks": [
+        {
+            "label": "Compilar C (com libm)",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "calculadora.c",
+                "-o",
+                "calculadora",
+                "-lm"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
         {
             "type": "cppbuild",
             "label": "C/C++: gcc arquivo de build ativo",
@@ -23,6 +42,5 @@
             },
             "detail": "Tarefa gerada pelo Depurador."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
